@@ -14,7 +14,7 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { MxPreventDefaultDirective } from './shared/mx-prevent-default.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { environment } from 'environments/environment';
+import { environment } from './environments/environment';
 
 export class Config {
   static api = environment.ws + '/' + environment.api;
