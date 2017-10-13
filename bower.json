@@ -1,0 +1,21 @@
+{
+  "name": "mxpanel",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Carlos O Carvalho <quenduk@yahoo.com.br>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "line-awesome": "https://maxcdn.icons8.com/fonts/line-awesome/1.1/line-awesome.zip",
+    "animate.css": "https://github.com/daneden/animate.css.git#^3.5.2"
+  }
+}

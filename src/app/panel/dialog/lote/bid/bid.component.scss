@@ -1,0 +1,31 @@
+.bid-table {
+    width: 100%;
+    border-collapse: collapse;
+    tbody {
+        tr:nth-child(odd) {
+            background: #ddd;
+        }
+    }
+    td,
+    th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+        text-align: left;
+    }
+}
+
+.box-classif-total {
+    background: #33973e;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 90%;
+}
+
+.dialogBidPanel {
+    width: 400px;
+}
+
+.bid-content.mat-dialog-content {
+    min-height: 450px;
+}

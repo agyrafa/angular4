@@ -1,0 +1,62 @@
+<div class="card animated" [ngClass]="{'is-new-bid': card.bided, 'pulse' : animatedCard, 'fadeIn' : fadeIn}">
+    <div class="card-container">
+        <div class="card-head">
+            <a href="#" class="link-favorite"><i class="la la-star-o"></i></a>
+            <span class="number mx-click-change-slide" (click)="setCard(card)"><small>LOTE</small> <span>{{card.number}}</span></span>
+            <span class="timer-counter mx-click-change-slide" (click)="setCard(card)">
+            <mx-clock-down *ngIf="card.closed == 'N'" [timestamp]="card.timestamp" [showHours]="true" [labelForHours]="'Aberto'" [enableClockBeforeDays]="1">...</mx-clock-down>
+            <small *ngIf="card.closed == 'S'"> FECHADO</small>
+        </span>
+        </div>
+        <div class="card-body">
+            <div ng-hide="showPicture" class="click-slide mx-click-change-slide" (click)="setCard(card)">
+                <div imageBackground (click)="getPictures(card)" class="card-thumbnail" [src]="card.thumbnail"></div>
+            </div>
+            <div class="description mx-click-change-slide" (click)="setCard(card)"><span [innerHTML]="card.description"></span></div>
+            <div class="inc-buttons">
+                <div class="inc mx-click-change-slide" (click)="setCard(card)">
+                    <span>INC.</span>&nbsp;<span>
+                    {{card.inc | numberformat:2:',':'.'  }}
+                </span><span *ngIf="card.unity == 'kg'" class="unity-pc"><i class="fa fa-balance-scale"></i></span>
+                </div>
+                <div class="buttons-info">
+                    <a href="#" mxPreventDefault (click)="getPictures(card)"><i class="la la-camera animated"></i></a>
+                    <a href="#" mxPreventDefault (click)="getInfo(card)"><i class="la la-info animated"></i></a>
+                    <a href="#" mxPreventDefault (click)="getBids(card)"><i class="la la-legal animated"></i></a>
+                </div>
+            </div>
+            <div class="price mx-click-change-slide" (click)="setCard(card)">
+                <span class="price-label">
+                <span> 
+                  {{card.price | numberformat:2:',':'.' }}
+                </span>+{{card.comission}}%
+                </span>
+            </div>
+        </div>
+        <div class="card-foot">
+            <div class="status mx-click-change-slide" (click)="setCard(card)">
+                <div *ngIf="card.enable == 1">
+                    <span class="solded" *ngIf="card.status == 's'">
+                                     <span class="lbl">FECHADO</span> <span>Vendido</span>
+                    </span>
+                    <span class="conditional" *ngIf="card.status == 'c'">
+                                    <span class="lbl">FECHADO</span><span>Condicional</span>
+                    </span>
+                    <span class="empty" *ngIf="card.status != 'c'  && card.status != 's' ">   
+                                    <span class="lbl"><span>ABERTO</span></span><span>LANCE</span>
+                    </span>
+
+                </div>
+                <div *ngIf="card.enable == 2">
+                    <span class="removed">
+                                           <span>LOTE RETIRADO</span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="login mx-click-change-slide" (click)="setCard(card)">
+                <span>{{card.login}}</span>
+            </div>
+        </div>
+    </div>
+</div>

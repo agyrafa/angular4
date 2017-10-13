@@ -1,0 +1,41 @@
+<span class="btn-bid-close" (click)="close()"><i class="la la-times"></i> </span>
+<h2 md-dialog-title>INFORMAÇÕE DO LOTE</h2>
+<h3>{{data?.title }}</h3>
+<md-dialog-content class="dialogInfoPanel">
+    <md-tab-group>
+        <md-tab label="GERAIS">
+            <br>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td width="100px"><strong>Comitente</strong></td>
+                        <td>{{data?.seller}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Horário</strong></td>
+                        <td>{{data?.hour}}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Lance Inicial</strong></td>
+                        <td>{{data?.price}}</td>
+
+                    </tr>
+                    <tr>
+                        <td><strong>Visitação</strong></td>
+                        <td>{{data?.visitor_information}}</td>
+
+                    </tr>
+                    <tr>
+                        <td><strong>Retirada</strong></td>
+                        <td>{{data?.remove_information}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </md-tab>
+        <md-tab label="DETALHES">
+            <div [innerHTML]="data?.description"></div>
+        </md-tab>
+    </md-tab-group>
+</md-dialog-content>

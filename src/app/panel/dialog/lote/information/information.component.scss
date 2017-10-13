@@ -1,0 +1,20 @@
+.dialogInfoPanel {
+    min-width: 70%;
+    min-height: 450px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    tbody {
+        tr:nth-child(odd) {
+            background: #f0f0f0;
+        }
+    }
+    td,
+    th {
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        text-align: left;
+    }
+}

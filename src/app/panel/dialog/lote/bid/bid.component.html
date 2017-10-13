@@ -1,0 +1,27 @@
+<div>
+    <span class="btn-bid-close" (click)="close()"><i class="la la-times"></i> </span>
+    <h2 md-dialog-title class="bid-title">Lances ofertados <span class="pull-right"> TOTAL ({{bids.bids.total}}) </span> </h2>
+    <md-dialog-content class="bid-content">
+        <div class="box-classif-total">
+            <span class="text-classif-total">MAIOR LANCE</span>
+        </div>
+        <br/>
+        <bid-item *ngIf="bids.bids.last !== null" [data]="[bids.bids.last]"></bid-item>
+        <bid-item *ngIf="bids.bids.last == null" [data]="[]"></bid-item>
+        <br/>
+        <br/>
+        <div class="box-classif-total">
+            <span class="text-classif-total">LANCES SUPERADOS </span>
+        </div>
+        <br/>
+        <bid-item [data]="bids.bids.data"></bid-item>
+        <br/>
+        <br/>
+        <div class="box-classif-total">
+            <span class="text-classif-total">LANCES CONSOLIDADOS  </span>
+            <span class="pull-right">TOTAL ({{bids.bids.buyers.length}})</span>
+        </div>
+        <br/>
+        <bid-item [data]="bids.bids.buyers"></bid-item>
+    </md-dialog-content>
+</div>

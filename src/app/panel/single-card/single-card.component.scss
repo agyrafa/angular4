@@ -1,0 +1,516 @@
+@import '../panel.component.scss';
+.panel-sigle {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    .card-single-component {
+        background: #f9f9f9;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        color: $gray-dark;
+        h2 {
+            margin: 0px;
+            color: $gray-dark;
+            font-size: 140%;
+            margin-bottom: 10px;
+            small {
+                font-weight: bold;
+                font-size: 90%;
+            }
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .separator {
+            height: 1px;
+            background: rgba(22, 130, 182, .5);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .title {
+            text-transform: uppercase;
+            font-size: 120%;
+            word-spacing: .6;
+            font-weight: 300;
+            span {
+                font-weight: 900;
+            }
+            strong {
+                font-size: 110%;
+            }
+        }
+        .card-config-options {
+            margin-top: 10px;
+            a {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                color: $gray-dark;
+                width: 49%;
+                display: inline-block;
+                padding: 5px;
+                font-size: 73%;
+                text-transform: uppercase;
+            }
+            a:hover {
+                text-decoration: none;
+                .la {
+                    -webkit-backface-visibility: visible !important;
+                    backface-visibility: visible !important;
+                    -webkit-animation-name: flipInX;
+                    animation-name: flipInX;
+                }
+            }
+            .la {
+                background: $primary-blue;
+                color: #eee;
+                border-radius: 50%;
+                padding: 3px;
+                font-size: 170%;
+            }
+        }
+        .card-single-head {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-bottom: 1px solid $primary-blue;
+            .title {
+                color: $secondary-green;
+            }
+        }
+        .description {
+            display: table;
+            width: 100%;
+            background: $gray-lighter;
+            margin-bottom: 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .label-description,
+        .data-description {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            height: 90px;
+            text-transform: uppercase;
+            line-height: 14px;
+        }
+        .data-description {
+            padding: 5px;
+        }
+        .label-description {
+            width: 30%;
+            background: $primary-blue;
+            color: #eee;
+            span {
+                font-weight: 900;
+            }
+        }
+        .bids-fight {
+            display: table;
+            width: 100%;
+            h2 {
+                font-size: 90%;
+                text-transform: uppercase;
+                color: $gray;
+                margin-top: 5px;
+            }
+        }
+        .bid-fight-label {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            width: 50%;
+            background: $secondary-green;
+            color: #fff;
+            font-size: 100%;
+            text-transform: uppercase;
+            word-spacing: .4;
+            line-height: 14px;
+            padding: 10px;
+            font-weight: 300;
+            span {
+                font-weight: 900;
+            }
+        }
+        .bid-fight-description {
+            display: table-cell;
+            text-align: letf;
+            vertical-align: middle;
+            padding-left: 10px;
+            font-size: 90%;
+            text-transform: uppercase;
+            .bid-up,
+            .bid-down {
+                display: block;
+            }
+            .bid-down {
+                color: $secondary-red;
+            }
+        }
+        .lote-info {
+            margin-top: 10px;
+        }
+        .lote-info p {
+            color: $gray;
+            font-size: 90%;
+            font-weight: 500;
+        }
+        .box-buttons-lote {
+            margin-bottom: 5px;
+            background: $primary-blue;
+            color: #fff;
+            .la {
+                background: #eee;
+                color: $secondary-blue;
+                border-radius: 50%;
+                padding: 5px;
+                font-size: 120%;
+            }
+            .bt-lances {
+                border-right: 1px solid #ccc;
+                padding-right: 10px;
+            }
+            .increment,
+            .buttons-info {
+                float: left;
+            }
+            .increment {
+                background: $gray-darker;
+                color: #eee;
+                width: 50%;
+                padding: 5px;
+            }
+            .buttons-info {
+                padding: 3px;
+                text-align: right;
+                width: 40%
+            }
+        }
+        .current-price {
+            background: $primary-yellow;
+            display: table;
+            width: 100%;
+            height: 25px;
+            .info-price,
+            .price {
+                width: 50%;
+                color: #fff;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .info-price {
+                background: $gray-darker;
+                padding: 4px;
+            }
+            .price {
+                color: $gray-darker;
+                font-size: 130%;
+                font-weight: 900;
+                text-align: right;
+            }
+        }
+        .bid-lote {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .bid-disabled-info {
+            display: table;
+            height: 60px;
+            width: 100%;
+            span {
+                display: table-cell;
+                vertical-align: middle;
+                background: $primary-red;
+                color: #fff;
+                text-align: center;
+                font-size: 130%;
+            }
+        }
+        .bid-buttons {
+            display: table;
+            width: 100%;
+            margin-top: 5px;
+            .bid-manual {
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                width: 40%;
+            }
+            .bid-auto {
+                display: table-cell;
+                text-align: right;
+                vertical-align: middle;
+                width: 60%;
+                border-right: 1px solid #ddd;
+                padding-right: 10px;
+            }
+            .bid-reset-buttton,
+            .bid-reset-buttton:visited {
+                text-align: none;
+                background: rgba(50, 50, 50, 1);
+                font-size: 80%;
+                border-radius: 50%;
+                padding: 20px 10px;
+                color: #fff;
+                text-transform: uppercase;
+                display: inline-block;
+                line-height: 12px;
+                span {
+                    display: block;
+                }
+            }
+            .bid-reset-buttton[disabled],
+            .bid-auto-buttton[disabled],
+            .bid-single-button[disabled] {
+                background: rgba(50, 50, 50, .3);
+            }
+            .bid-single-button {
+                position: relative;
+                background: $secondary-green;
+                font-size: 120%;
+                border-radius: 50%;
+                padding: 28px 14px;
+                color: #fff;
+                text-transform: uppercase;
+                display: inline-block;
+                outline: none;
+                small {
+                    font-size: 50%;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -33%;
+                    margin-top: -2px;
+                }
+                >small {
+                    margin-top: -5px;
+                }
+            }
+            .bid-single-button.btn-login {
+                background: $primary-red;
+            }
+            .bid-single-button.btn-hability {
+                font-size: 90%;
+                padding: 28px 5px;
+                background: $color-orange;
+                color: #222;
+                font-weight: 800;
+                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .3);
+                span {
+                    display: block;
+                    animation: bidNow .5s infinite alternate;
+                }
+            }
+            .bid-single-button.button-automatic-color {
+                background: $secondary-red;
+            }
+            .bid-auto-buttton {
+                border: none;
+                background: #333;
+                font-size: 100%;
+                border-radius: 50%;
+                padding: 9px 10px;
+                color: #fff;
+                text-transform: uppercase;
+                display: inline-block;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .bid-automatic {
+            background: $secondary-green;
+            font-size: 120%;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: #fff;
+            padding: 5px;
+            button {
+                border-radius: 50%;
+                background: #fff;
+                border: none;
+                height: 22px;
+                width: 22px;
+                margin-right: 10px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .la {
+                color: $secondary-green;
+            }
+            span {
+                font-weight: 900;
+            }
+            &.disabled {
+                background: rgba(9, 140, 96, .4);
+                .la {
+                    background: rgba(255, 255, 255, .4);
+                }
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        width: 100%;
+    }
+
+    .animate {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    .mxFlipping {
+        -webkit-animation-name: mxFlipping;
+        animation-name: mxFlipping;
+    }
+
+
+    @-webkit-keyframes mxFlipping {
+        from {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            opacity: 1;
+        }
+        40% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        60% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+        }
+    }
+    @keyframes mxFlipping {
+        from {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            opacity: 1;
+        }
+        40% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        60% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+        }
+    }
+    @-webkit-keyframes mxFlipping {
+        from {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            opacity: 1;
+        }
+        40% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        60% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+        }
+    }
+    @keyframes mxFlippingBack {
+        from {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        40% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -120deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -120deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        60% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -100deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -100deg);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+        }
+    }
+    @-webkit-keyframes mxFlippingBack {
+        from {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        40% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -120deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -120deg);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+        }
+        60% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -100deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -100deg);
+            opacity: 1;
+        }
+        80% {
+            -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        }
+        to {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+        }
+    }
+ }

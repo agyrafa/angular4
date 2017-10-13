@@ -1,0 +1,118 @@
+<div class="panel-sigle" mx-fixed>
+    <div class="card-single-component" *ngIf="cardSelected">
+        <div class="card-single-head">
+            <h2 class="title"><span>Painel do</span> Lance / <strong>{{cardSelected?.number}}</strong></h2>
+        </div>
+
+        <div class="card-single-body">
+            <div class="card-config-options">
+                <a href="" class="text-right">
+                    <span>Favoritos</span>
+                    <i class="la la-star-o animated"></i>
+                </a>
+                <a href="">
+                    <i class="la la-adjust animated"></i>
+                    <span>Gerenciar Favoritos</span>
+                </a>
+                <a href="#" mx-prevent-default ng-click="vm.PanelController.triggerShowPicture()" class="text-right">
+                    <span>Exibir Fotos</span>
+                    <i class="la la-camera-retro animated"></i>
+                </a>
+                <a href="">
+                    <i class="la la-volume-off animated"></i>
+                    <span>Audio</span>
+                </a>
+            </div>
+            <span class="separator"></span>
+            <div class="bids-fight">
+                <div class="bid-fight-label">
+                    <span>Disputa de </span> Lance
+                </div>
+                <div class="bid-fight-description">
+                    <span class="bid-up">0 Vencedores</span>
+                    <span class="bid-down">0 Superados</span>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div class="card-single-foot">
+            <div class="lote-info" flippy mx-flip="vm.flipp" [ngClass]='{"animate mxFlipping" : animated}'>
+                <div class="description">
+                    <div class="label-description">
+                        <small>Lote</small>
+                        <span>{{cardSelected?.number}}</span>
+                    </div>
+                    <div class="data-description">
+                        <p [innerHTML]="cardSelected?.description"></p>
+                    </div>
+                </div>
+                <div class="box-buttons-lote">
+                    <div class="increment">
+                        <span class="title">
+                            <span>INC. R$ </span>{{cardSelected?.inc}}
+                        </span>
+                    </div>
+                    <div class="buttons-info">
+                        <a href="#" mx-prevent-default ng-click="vm.PanelController.getPictures(vm.data)"><i class="la la-camera"></i></a>
+                        <a href="#" mx-prevent-default ng-click="vm.PanelController.getInfo(vm.data)"><i class="la la-info"></i></a>
+                        <span class=""> <a href="#" mx-prevent-default ng-click="vm.PanelController.getBids(vm.data)" ><i class="la la-legal"></i></a></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="current-price" [ngClass]='{"animate mxFlipping" : animated}' flippy mx-flip="vm.flipp">
+                <div class="info-price">
+                    <span class="title"><span>Proxima</span> Oferta </span>
+                </div>
+                <div class="price">{{cardSelected?.next_price}}</div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="bid-lote" [ngClass]='{"animate mxFlipping" : animated}' flippy mx-flip="vm.flipp">
+                <div class="bid-disabled-info" *ngIf="cardSelected?.enable == 2">
+                    <span><i class="la la-exclamation"></i> RETIRADO</span>
+                </div>
+                <div ng-if="vm.data.enable == 1">
+                    <span class="title"><span>Opções de </span>Lance</span>
+                    <div class="bid-buttons">
+                        <div class="bid-auto">
+                            <button mx-prevent-default (click)="updateBid(cardSelected, 1)" [disabled]="!isClickedOnce || user?.id == 0" (click)="disabledBid()" class="bid-auto-buttton">1X</button>
+                            <button mx-prevent-default (click)="updateBid(cardSelected, 2)" [disabled]="!isClickedOnce || user?.id == 0" (click)="disabledBid()" class="bid-auto-buttton">2X</button>
+                            <button mx-prevent-default (click)="updateBid(cardSelected, 3)" [disabled]="!isClickedOnce || user?.id == 0" (click)="disabledBid()" class="bid-auto-buttton">5X</button>
+                            <a href="#" mx-prevent-default ng-click="vm.PanelController.resetBid()" class="bid-reset-buttton" ng-disabled="vm.PanelController.isNotReset"><span>Minimo</span>Voltar</a>
+                        </div>
+                        <div class="bid-manual">
+                            <a mxPreventDefault href="" *ngIf="user?.id > 0" class="bid-single-button" ng-disabled="vm.PanelController.checkAutomatic(vm.data)" 
+                                (click)="confirmBid(cardSelected)" ng-class="{'button-automatic-color':!vm.PanelController.isNotReset}" disable>
+                                <small *ngIf="!isClickedOnce">Confirmar</small> Lance
+                                <small *ngIf="!isClickedOnce">Automático</small>
+                            </a>
+
+                            <a href="#" class="bid-single-button btn-login" *ngIf="user?.id == 0" ng-class="{'button-automatic-color':!vm.PanelController.isNotReset}">
+                                Login                            
+                            </a>
+
+                            <a href="#" mx-prevent-default class="bid-single-button btn-hability" *ngIf="!user?.hability">
+                                <span>Habilitar</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="bid-automatic" [ngClass]='{"disabled" : isClickedOnce, "animate mxFlipping" : animated}' flippy mx-flip="vm.flipp">
+                <span>Lance</span> Automático Ativo
+                <button title="Desativar lance automático" (click)="disabledBid()" class="pull-right">
+                    <i class="la la-power-off"></i>
+                </button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
